@@ -1,0 +1,171 @@
+/* =============================================
+   PORTFOLIO — responsive.css
+   Mobile, Tablet, Desktop Breakpoints
+   ============================================= */
+
+/* ---- TABLET: 577px–992px ---- */
+@media (max-width: 992px) {
+
+  :root {
+    --section-pad: 70px;
+  }
+
+  /* Navbar */
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - var(--nav-height));
+    background: var(--bg-2);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 0.25rem;
+    z-index: 999;
+    transition: right var(--transition);
+    overflow-y: auto;
+  }
+  .nav-links.open { right: 0; }
+
+  .mobile-overlay { display: block; pointer-events: none; }
+  .mobile-overlay.active { pointer-events: all; }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  .nav-link::after { display: none; }
+
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: calc(var(--nav-height) + 3rem);
+    padding-bottom: 5rem;
+    min-height: auto;
+    gap: 2rem;
+  }
+  .hero-content { max-width: 100%; }
+  .hero-desc { max-width: 100%; }
+  .hero-cta { justify-content: center; }
+  .hero-socials { justify-content: center; }
+
+  .profile-ring-wrapper { width: 300px; height: 300px; }
+  .profile-circle { width: 210px; height: 210px; }
+  .tag-1 { left: -5%; }
+  .tag-2 { left: -10%; }
+  .tag-3 { right: -5%; }
+  .tag-4 { right: -8%; }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-image-col { display: flex; justify-content: center; }
+
+  /* Skills */
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .soft-skills-grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Resume */
+  .resume-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Scroll hint */
+  .scroll-hint { display: none; }
+}
+
+/* ---- MOBILE: max-width 576px ---- */
+@media (max-width: 576px) {
+
+  :root {
+    --section-pad: 55px;
+    --nav-height: 64px;
+  }
+
+  .section-container { padding: 0 1.25rem; }
+
+  /* Navbar */
+  .nav-container { padding: 0 1.25rem; }
+  .nav-logo { font-size: 1.2rem; }
+
+  /* Hero */
+  .hero { padding: calc(var(--nav-height) + 2rem) 1.25rem 4rem; }
+
+  .profile-ring-wrapper { width: 240px; height: 240px; }
+  .profile-circle { width: 170px; height: 170px; }
+  .floating-tag { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
+  .tag-1 { left: 0; top: 5%; }
+  .tag-2 { left: 0; bottom: 10%; }
+  .tag-3 { right: 0; top: 5%; }
+  .tag-4 { right: 0; bottom: 10%; }
+
+  .hero-name { font-size: 2.2rem; }
+  .hero-typewriter { font-size: 1rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .hero-cta { flex-direction: column; width: 100%; }
+  .hero-cta .btn { justify-content: center; }
+
+  /* Section titles */
+  .section-title { font-size: 1.75rem; }
+  .section-header { margin-bottom: 2.5rem; }
+
+  /* About */
+  .about-img-frame { width: 240px; height: 240px; }
+  .about-details-grid { grid-template-columns: 1fr; }
+
+  /* Skills */
+  .soft-skills-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-filters { gap: 0.4rem; }
+  .filter-btn { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+
+  /* Contact Form */
+  .contact-form-wrapper { padding: 1.5rem; }
+
+  /* Resume */
+  .resume-grid { grid-template-columns: 1fr; }
+
+  /* Back to top */
+  .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+
+  /* Buttons */
+  .btn { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
+  .btn-lg { padding: 0.85rem 1.75rem; font-size: 0.95rem; }
+}
+
+/* ---- LARGE DESKTOP: 1440px+ ---- */
+@media (min-width: 1440px) {
+  .section-container { max-width: 1400px; }
+  :root { --section-pad: 120px; }
+}
+
+/* ---- PREFERS REDUCED MOTION ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .profile-circle { animation: none; }
+  .profile-ring { animation: none; }
+  .floating-tag { animation: none; }
+  .scroll-line { animation: none; }
+}
+
